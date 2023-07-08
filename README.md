@@ -42,6 +42,8 @@ val InsnBuilder.iconst_6 get() = bipush(6)
 
 ```java
 var list = new InsnList() {{
+    var start = new LabelNode();
+    add(start);
     add(new FieldInsnNode(
         Opcodes.GETSTATIC,
         "java/lang/System",
@@ -55,6 +57,7 @@ var list = new InsnList() {{
         "println",
         "(Ljava/lang/String;)V"
     ));
+    add(new JumpInsnNode(Opcodes.GOTO, start));
 }};
 ```
 
@@ -64,6 +67,8 @@ var list = new InsnList() {{
 
 ```kotlin
 val list = InsnList().apply {
+    val start = LabelNode()
+    add(start)
     add(FieldInsnNode(
         Opcodes.GETSTATIC,
         "java/lang/System",
@@ -77,6 +82,7 @@ val list = InsnList().apply {
         "println",
         "(Ljava/lang/String;)V"
     ))
+    add(JumpInsnNode(Opcodes.GOTO, start))
 }
 ```
 
@@ -86,6 +92,8 @@ val list = InsnList().apply {
 
 ```kotlin
 val list = asm {
+    val start = LabelNode()
+    +start
     getstatic(
         "java/lang/System",
         "out",
@@ -97,6 +105,7 @@ val list = asm {
         "println",
         "(Ljava/lang/String;)V"
     )
+    goto(start)
 }
 
 
