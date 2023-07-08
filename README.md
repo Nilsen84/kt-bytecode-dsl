@@ -30,7 +30,7 @@ fun InsnBuilder.int(n: Int) = when (n) {
 val InsnBuilder.iconst_6 get() = bipush(6)
 ```
 
-#### Examples
+#### Comparisons
 <table>
 <tr>
 <th>Java</th>
