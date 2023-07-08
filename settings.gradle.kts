@@ -1,1 +1,1 @@
-rootProject.name = "bytecode-kt-dsl"
+rootProject.name = "kt-bytecode-dsl"
