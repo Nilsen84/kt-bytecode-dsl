@@ -1,6 +1,6 @@
 ## Kotlin Bytecode DSL
 A DSL that assists with writing bytecode in ASM
-> Note: This is NOT an abstraction layer, it simply reduces the amount of boilerplate you have to write.
+> Note: This is NOT an abstraction layer, it simply reduces the amount of boilerplate you have to write
 
 #### Usage
 ```kts
